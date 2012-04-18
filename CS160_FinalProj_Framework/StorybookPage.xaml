@@ -1,0 +1,22 @@
+﻿<Page x:Class="CS160_FinalProj_Framework.StorybookPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1280"
+	Title="StorybookPage">
+    <Canvas Height="800" Name="BGCanvas" Width="1280" Background="{x:Null}">        
+        <!-- [WL] Frame to display storybook pages. -->
+        <Frame Canvas.Left="0" Canvas.Top="0" Height="800" Name="PageFrame" Width="1280" />        
+        
+        <!-- [WL] Menu bar with icons and text. -->
+        <Image Canvas.Left="0" Canvas.Top="600" Height="200" Name="MenuFrame" Stretch="Fill" Width="1280" Source="/CS160_FinalProj_Framework;component/Images/storybook_frame.png" />
+        <TextBlock Canvas.Left="50" Canvas.Top="675" Height="100" Name="Storybook_Text" Text="Text goes here." Width="1180" FontFamily="FuturaBook BT" FontSize="40" TextWrapping="Wrap" TextTrimming="WordEllipsis" />
+        <Image Canvas.Left="875" Canvas.Top="575" Height="100" Name="Storybook_SettingsIcon" Stretch="Fill" Width="100" Source="/CS160_FinalProj_Framework;component/Images/storybook_settings_icon.png" />
+        <Image Canvas.Left="1000" Canvas.Top="550" Height="100" Name="Storybook_PlayIcon" Stretch="Fill" Width="100" Source="/CS160_FinalProj_Framework;component/Images/storybook_play_icon.png" MouseDown="Storybook_PlayIcon_MouseDown" />
+        <Image Canvas.Left="1125" Canvas.Top="550" Height="100" Name="Storybook_ExitIcon" Stretch="Fill" Width="100" Source="/CS160_FinalProj_Framework;component/Images/storybook_exit_icon.png" />
+        
+        <MediaElement Canvas.Left="1000" Canvas.Top="550" Height="100" Name="Audio" Width="100" />
+    </Canvas>
+</Page>

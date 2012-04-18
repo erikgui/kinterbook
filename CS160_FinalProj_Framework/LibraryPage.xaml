@@ -1,0 +1,22 @@
+﻿<Page x:Class="CS160_FinalProj_Framework.LibraryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+       d:DesignHeight="800" d:DesignWidth="1280"
+	Title="LibraryPage">
+    <Canvas Height="800" Name="BGCanvas" Width="1280">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/CS160_FinalProj_Framework;component/Images/library_background.jpg" />
+        </Canvas.Background>
+        
+        <!-- [WL] Three book choices. -->
+        <Image Canvas.Left="100" Canvas.Top="225" Height="400" Name="Cinderella" Stretch="Fill" Width="400" Source="/CS160_FinalProj_Framework;component/Library/Images/Cinderella.png" />
+        <Image Canvas.Left="450" Canvas.Top="350" Height="400" Name="Goldilocks_and_the_Three_Bears" Stretch="Fill" Width="400" Source="/CS160_FinalProj_Framework;component/Library/Images/Goldilocks_and_the_Three_Bears.png" />
+        <Image Canvas.Left="800" Canvas.Top="225" Height="400" Name="Robin_Hood" Stretch="Fill" Width="400" Source="/CS160_FinalProj_Framework;component/Library/Images/Robin_Hood.png" />
+        
+        <!-- [WL] Back button. -->
+        <Image Canvas.Left="50" Canvas.Top="50" Height="100" Name="Back" Stretch="Fill" Width="220" Source="/CS160_FinalProj_Framework;component/Images/back_button.png" />
+    </Canvas>
+</Page>
