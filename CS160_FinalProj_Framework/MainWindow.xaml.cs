@@ -20,7 +20,9 @@ namespace CS160_FinalProj_Framework
 {
     public partial class MainWindow : Window
     {
+        // [WL] For the Kinect sensor.
         public static Microsoft.Samples.Kinect.WpfViewers.KinectSensorChooser sensor;
+        public bool closing = false;
 
         // [WL] For DTW Gesture Recognizer.
         public static DtwGestureRecognizer _dtw;
@@ -37,13 +39,16 @@ namespace CS160_FinalProj_Framework
         private static Skeleton[] allSkeletons = new Skeleton[6];
         public static Skeleton skeleton;
         
-        public bool closing = false;
+        // [WL] For gestures.
         public static bool ready = false;
         private static int readyTimer = 0;
-        public static Frame pageFrame;
         public static double timerMax = 125.0;
+        
+        // [WL] Miscellaneous variables and page elements.
+        public static Frame pageFrame;        
         private static String currentPage = "HomePage";  
         public static String CurrentBook = "";
+        public static bool playingMode = true; 
 
         public MainWindow()
         {
@@ -53,10 +58,11 @@ namespace CS160_FinalProj_Framework
             cursor = KinectCursor;
             pageFrame = MainFrame;
             ready = true;
+        }
 
-            // [WL] For recording purposes.
-            var webcam = new ColorCamera();
-            webcam.Show();
+        public static bool hoverCheck(Image img)
+        {                   
+            return (Canvas.GetLeft(MainWindow.cursor) > Canvas.GetLeft(img) && Canvas.GetLeft(MainWindow.cursor) < (Canvas.GetLeft(img) + img.ActualWidth) && Canvas.GetTop(MainWindow.cursor) > Canvas.GetTop(img) && Canvas.GetTop(MainWindow.cursor) < (Canvas.GetTop(img) + img.ActualHeight));                    
         }
 
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)

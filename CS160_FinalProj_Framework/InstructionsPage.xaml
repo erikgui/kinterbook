@@ -4,12 +4,12 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1280"
+      d:DesignHeight="720" d:DesignWidth="1152"
 	Title="InstructionsPage">
-    <Canvas Height="800" Name="canvas1" Width="1280">
+    <Canvas Height="720" Name="canvas1" Width="1152">
         <Canvas.Background>
             <ImageBrush ImageSource="/CS160_FinalProj_Framework;component/Images/generic_background.jpg" />
         </Canvas.Background>
-        <Image Canvas.Left="275" Canvas.Top="220" Height="350" Name="InstructionalImage" Stretch="Fill" Width="730" Source="/CS160_FinalProj_Framework;component/Images/instructions.png" />
+        <Image Canvas.Left="211" Canvas.Top="200" Height="350" Name="InstructionalImage" Stretch="Fill" Width="730" Source="/CS160_FinalProj_Framework;component/Images/instructions.png" />
     </Canvas>
 </Page>

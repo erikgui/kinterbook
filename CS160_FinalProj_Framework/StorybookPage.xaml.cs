@@ -102,7 +102,7 @@ namespace CS160_FinalProj_Framework
 
         public static void gestureChecks(float rightHandX, float rightHandZ)
         {
-            if (onPlayIconCheck())
+            if (MainWindow.playingMode && onPlayIconCheck())
             {
                 playAudioIconTimer++;
                 if (playAudioIconTimer <= 25)
@@ -122,15 +122,20 @@ namespace CS160_FinalProj_Framework
                     }
                 }
             }
+            else if (!MainWindow.playingMode)
+            {
+                // recording stuff goes here
+            }
             else if (!instructions.Equals(""))
             {
+                // may need to move the following three lines before the switch/case statement
                 Console.WriteLine("Currently on an instruction.");
                 MainWindow.ready = false;
-                instructions = instructions.Replace("*", "");                
+                instructions = instructions.Replace("*", "");
                 switch (instructions)
                 {
                     case "KNOCK":
-                        if(knockingMotion(rightHandZ))
+                        if (knockingMotion(rightHandZ))
                         {
                             Console.WriteLine("Done knocking.");
                             instructions = "";
@@ -139,7 +144,7 @@ namespace CS160_FinalProj_Framework
                         }
                         break;
                     default:
-                        instructions = "";                        
+                        instructions = "";
                         break;
                 }
             }
@@ -150,11 +155,11 @@ namespace CS160_FinalProj_Framework
                 {
                     if (currentText < textMax)
                     {
-                        currentText++;                        
+                        currentText++;
                         if (lines[currentText].Contains('*'))
                         {
-                            int pos = lines[currentText].IndexOf('*');                            
-                            instructions = lines[currentText].Substring(pos);                            
+                            int pos = lines[currentText].IndexOf('*');
+                            instructions = lines[currentText].Substring(pos);
                             lines[currentText] = lines[currentText].Replace(instructions, "");
                             Textblock.Foreground = new SolidColorBrush(Colors.Red);
                             Textblock.FontWeight = FontWeights.Bold;

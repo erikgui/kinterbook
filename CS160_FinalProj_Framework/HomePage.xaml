@@ -4,16 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1280"
+      d:DesignHeight="720" d:DesignWidth="1152"
 	Title="HomePage" xmlns:my="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers">
-    <Canvas Height="800" Name="BGCanvas" Width="1280">
+    <Canvas Height="720" Name="BGCanvas" Width="1152">
         <Canvas.Background>
             <ImageBrush ImageSource="/CS160_FinalProj_Framework;component/Images/homepage_background.jpg" />
         </Canvas.Background>
         
         <!-- [WL] Menu buttons. -->
-        <Image Canvas.Left="200" Canvas.Top="75" Height="200" Name="PlayIcon" Stretch="Fill" Width="200" Source="/CS160_FinalProj_Framework;component/Images/homepage_play_icon.png" MouseDown="PlayIcon_MouseDown" />
-        <Image Canvas.Left="50" Canvas.Top="325" Height="200" Name="RecordIcon" Stretch="Fill" Width="200" Source="/CS160_FinalProj_Framework;component/Images/homepage_record_icon.png" />
-        <Image Canvas.Left="200" Canvas.Top="575" Height="200" Name="SettingsIcon" Stretch="Fill" Width="200" Source="/CS160_FinalProj_Framework;component/Images/homepage_settings_icon.png" />                                      
+        <Image Canvas.Left="200" Canvas.Top="40" Height="200" Name="PlayIcon" Stretch="Fill" Width="200" Source="/CS160_FinalProj_Framework;component/Images/homepage_play_icon.png" MouseDown="PlayIcon_MouseDown" />
+        <Image Canvas.Left="30" Canvas.Top="270" Height="200" Name="RecordIcon" Stretch="Fill" Width="200" Source="/CS160_FinalProj_Framework;component/Images/homepage_record_icon.png" MouseDown="RecordIcon_MouseDown" />
+        <Image Canvas.Left="200" Canvas.Top="480" Height="200" Name="SettingsIcon" Stretch="Fill" Width="200" Source="/CS160_FinalProj_Framework;component/Images/homepage_settings_icon.png" />                                      
     </Canvas>
 </Page>
