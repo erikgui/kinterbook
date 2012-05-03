@@ -34,3 +34,11 @@ C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framewo
 C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\ColorCamera.baml
 C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\ColorCamera.g.cs
 C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\CS160_FinalProj_Framework_Content.g.cs
+C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\Library\Goldilocks_and_the_Three_Bears\Page3.baml
+C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\Library\Goldilocks_and_the_Three_Bears\Page3.g.cs
+C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\Library\Goldilocks_and_the_Three_Bears\Page4.baml
+C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\Library\Goldilocks_and_the_Three_Bears\Page5.baml
+C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\Library\Goldilocks_and_the_Three_Bears\Page6.baml
+C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\Library\Goldilocks_and_the_Three_Bears\Page4.g.cs
+C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\Library\Goldilocks_and_the_Three_Bears\Page5.g.cs
+C:\Users\whitlai\Desktop\CS160\CS160_FinalProj_Framework\CS160_FinalProj_Framework\obj\x86\Debug\Library\Goldilocks_and_the_Three_Bears\Page6.g.cs

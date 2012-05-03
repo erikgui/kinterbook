@@ -8,13 +8,14 @@
 	Title="StorybookPage">
     <Canvas Height="720" Name="BGCanvas" Width="1152" Background="{x:Null}">        
         <!-- [WL] Frame to display storybook pages. -->
-        <Frame Canvas.Left="0" Canvas.Top="0" Height="720" Name="PageFrame" Width="1152" />        
+        <Frame Canvas.Left="0" Canvas.Top="0" Height="720" Name="PageFrame" Width="1152" MouseDown="PageFrame_MouseDown" />        
         
         <!-- [WL] Menu bar with icons and text. -->
         <Image Canvas.Left="0" Canvas.Top="520" Height="200" Name="MenuFrame" Stretch="Fill" Width="1152" Source="/CS160_FinalProj_Framework;component/Images/storybook_frame.png" />
         <TextBlock Canvas.Left="23" Canvas.Top="600" Height="100" Name="Storybook_Text" Text="Text goes here." Width="1100" FontFamily="FuturaBook BT" FontSize="40" TextWrapping="Wrap" TextTrimming="WordEllipsis" />
         <Image Canvas.Left="790" Canvas.Top="490" Height="100" Name="Storybook_SettingsIcon" Stretch="Fill" Width="100" Source="/CS160_FinalProj_Framework;component/Images/storybook_settings_icon.png" />
         <Image Canvas.Left="910" Canvas.Top="470" Height="100" Name="Storybook_PlayIcon" Stretch="Fill" Width="100" Source="/CS160_FinalProj_Framework;component/Images/storybook_play_icon.png" MouseDown="Storybook_PlayIcon_MouseDown" />
+        <Image Canvas.Left="910" Canvas.Top="470" Height="100" Name="Storybook_RecordIcon" Stretch="Fill" Width="100" Source="/CS160_FinalProj_Framework;component/Images/storybook_record_icon.png" Visibility="Collapsed" />
         <Image Canvas.Left="1030" Canvas.Top="480" Height="100" Name="Storybook_ExitIcon" Stretch="Fill" Width="100" Source="/CS160_FinalProj_Framework;component/Images/storybook_exit_icon.png" />
         
         <MediaElement Canvas.Left="910" Canvas.Top="470" Height="100" Name="Audio" Width="100" />

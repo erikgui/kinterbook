@@ -43,5 +43,11 @@ namespace CS160_FinalProj_Framework
             }
             oldRightHandX = rightHandX;
         }
+
+        // temporary, for testing purposes only
+        private void InstructionalImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.pageFrame.Navigate(new StorybookPage());
+        }
     }
 }

@@ -10,6 +10,6 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/CS160_FinalProj_Framework;component/Images/generic_background.jpg" />
         </Canvas.Background>
-        <Image Canvas.Left="211" Canvas.Top="200" Height="350" Name="InstructionalImage" Stretch="Fill" Width="730" Source="/CS160_FinalProj_Framework;component/Images/instructions.png" />
+        <Image Canvas.Left="211" Canvas.Top="200" Height="350" Name="InstructionalImage" Stretch="Fill" Width="730" Source="/CS160_FinalProj_Framework;component/Images/instructions.png" MouseDown="InstructionalImage_MouseDown" />
     </Canvas>
 </Page>

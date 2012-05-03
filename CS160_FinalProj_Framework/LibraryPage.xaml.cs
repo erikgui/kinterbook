@@ -86,6 +86,13 @@ namespace CS160_FinalProj_Framework
             {
                 reset();
             }
+        }
+
+        // temporary, for testing purposes only
+        private void Goldilocks_and_the_Three_Bears_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.CurrentBook = "Goldilocks_and_the_Three_Bears";
+            MainWindow.pageFrame.Navigate(new InstructionsPage());
         }     
     }
 }

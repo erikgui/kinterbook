@@ -7,7 +7,7 @@
         <Frame Canvas.Left="0" Canvas.Top="0" Height="720" Name="MainFrame" Width="1152" Source="HomePage.xaml" Navigated="MainFrame_Navigated" />
         
         <!-- [WL] Kinect Sensor Chooser. -->
-        <my:KinectSensorChooser Canvas.Left="300" Canvas.Top="300" Name="KinectSensorChooser" Width="700" KinectSensorChanged="KinectSensorChooser_KinectSensorChanged" />
+        <my:KinectSensorChooser Canvas.Left="470" Canvas.Top="475" Name="KinectSensorChooser" Width="600" KinectSensorChanged="KinectSensorChooser_KinectSensorChanged" />
         
         <!-- [WL] Custom Kinect cursor. Starts off-screen by default. NOTE: Need to change Fill to custom cursor image! -->
         <Ellipse Canvas.Left="-50" Canvas.Top="-50" Height="50" Width="50" Name="KinectCursor" Stroke="{x:Null}" Fill="BlueViolet" />

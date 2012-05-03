@@ -83,6 +83,18 @@
     <Compile Include="Library\Goldilocks_and_the_Three_Bears\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Library\Goldilocks_and_the_Three_Bears\Page3.xaml.cs">
+      <DependentUpon>Page3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Goldilocks_and_the_Three_Bears\Page4.xaml.cs">
+      <DependentUpon>Page4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Goldilocks_and_the_Three_Bears\Page5.xaml.cs">
+      <DependentUpon>Page5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Goldilocks_and_the_Three_Bears\Page6.xaml.cs">
+      <DependentUpon>Page6.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StorybookPage.xaml.cs">
       <DependentUpon>StorybookPage.xaml</DependentUpon>
     </Compile>
@@ -111,6 +123,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Library\Goldilocks_and_the_Three_Bears\Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Library\Goldilocks_and_the_Three_Bears\Page3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Library\Goldilocks_and_the_Three_Bears\Page4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Library\Goldilocks_and_the_Three_Bears\Page5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Library\Goldilocks_and_the_Three_Bears\Page6.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +227,11 @@
     <Resource Include="RecordedGesturesPrototype.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\storybook_record_icon.png" />
+    <Resource Include="Library\Goldilocks_and_the_Three_Bears\Page3.jpg" />
+    <Resource Include="Library\Goldilocks_and_the_Three_Bears\Page4.jpg" />
+    <Resource Include="Library\Goldilocks_and_the_Three_Bears\Page5.jpg" />
+    <Resource Include="Library\Goldilocks_and_the_Three_Bears\Page6.jpg" />
     <Content Include="recording.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

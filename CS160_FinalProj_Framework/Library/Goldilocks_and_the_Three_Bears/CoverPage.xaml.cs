@@ -18,7 +18,8 @@ namespace CS160_FinalProj_Framework.Library.Goldilocks_and_the_Three_Bears
     {
         public CoverPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            Console.WriteLine("This book has " + Convert.ToInt32(PageCount.Text) + " pages.");
             StorybookPage.pageMax = Convert.ToInt32(PageCount.Text);
             StorybookPage.textMax = 0;
             StorybookPage.lines = null;

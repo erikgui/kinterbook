@@ -21,7 +21,8 @@ namespace CS160_FinalProj_Framework
     public partial class MainWindow : Window
     {
         // [WL] For the Kinect sensor.
-        public static Microsoft.Samples.Kinect.WpfViewers.KinectSensorChooser sensor;
+        public static Microsoft.Samples.Kinect.WpfViewers.KinectSensorChooser sensor;        
+        public static KinectAudioSource sensorAudio;
         public bool closing = false;
 
         // [WL] For DTW Gesture Recognizer.
@@ -53,8 +54,7 @@ namespace CS160_FinalProj_Framework
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
-            sensor = KinectSensorChooser;
+            MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;            
             cursor = KinectCursor;
             pageFrame = MainFrame;
             ready = true;
@@ -87,6 +87,7 @@ namespace CS160_FinalProj_Framework
             }
 
             cursor.Visibility = Visibility.Visible;
+            sensorAudio = newSensor.AudioSource; // [WL] For audio recording.
 
             var parameters = new TransformSmoothParameters
             {

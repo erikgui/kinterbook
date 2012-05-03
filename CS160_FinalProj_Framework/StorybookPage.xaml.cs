@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -11,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Kinect;
 
 namespace CS160_FinalProj_Framework
 {    
@@ -36,11 +38,13 @@ namespace CS160_FinalProj_Framework
         // [WL] The three menu icons.
         private static Image SettingsIcon;
         private static Image PlayIcon;
+        private static Image RecordIcon;
         private static Image ExitIcon;
 
         // [WL] Other important page components.
         private static MediaElement AudioPlayer;
         private static int playAudioIconTimer = 0;
+        private static int recordAudioIconTimer = 0;
         public static TextBlock Textblock;
         private static Frame Book;
 
@@ -49,6 +53,7 @@ namespace CS160_FinalProj_Framework
             InitializeComponent();
             //SettingsIcon = Storybook_SettingsIcon;
             PlayIcon = Storybook_PlayIcon;
+            RecordIcon = Storybook_RecordIcon;
             //ExitIcon = Storybook_ExitIcon;
             AudioPlayer = Audio;
             Textblock = Storybook_Text;
@@ -65,7 +70,17 @@ namespace CS160_FinalProj_Framework
         public void init()
         {
             Book.Source = new Uri(path + "CoverPage.xaml", UriKind.RelativeOrAbsolute);
-            Textblock.Text = cleanTitle(MainWindow.CurrentBook);                        
+            Textblock.Text = cleanTitle(MainWindow.CurrentBook);
+            if (MainWindow.playingMode)
+            {
+                PlayIcon.Visibility = Visibility.Visible;
+                RecordIcon.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                PlayIcon.Visibility = Visibility.Collapsed;
+                RecordIcon.Visibility = Visibility.Visible;
+            }
         }
 
         private static void reset()
@@ -102,7 +117,7 @@ namespace CS160_FinalProj_Framework
 
         public static void gestureChecks(float rightHandX, float rightHandZ)
         {
-            if (MainWindow.playingMode && onPlayIconCheck())
+            if (MainWindow.playingMode && MainWindow.hoverCheck(PlayIcon))
             {
                 playAudioIconTimer++;
                 if (playAudioIconTimer <= 25)
@@ -116,15 +131,49 @@ namespace CS160_FinalProj_Framework
                     {                        
                         // play corresponding audio file for the page    
                         // temporarily just playing a fixed audio
-                        AudioPlayer.Source = new Uri("C:\\Users\\whitlai\\Desktop\\CS160\\CS160_FinalProj_Framework\\CS160_FinalProj_Framework\\recording.wav", UriKind.RelativeOrAbsolute);
+                        AudioPlayer.Source = new Uri("pack://application:,,,/Library/"+MainWindow.CurrentBook+"/Page"+currentPage+".wav", UriKind.RelativeOrAbsolute);
                         AudioPlayer.LoadedBehavior = MediaState.Play;
                         AudioPlayer.UnloadedBehavior = MediaState.Close;
                     }
                 }
             }
-            else if (!MainWindow.playingMode)
-            {
-                // recording stuff goes here
+            else if (!MainWindow.playingMode && MainWindow.hoverCheck(RecordIcon))
+            {                
+                recordAudioIconTimer++;
+                if (recordAudioIconTimer <= 25)
+                {
+                    RecordIcon.Opacity = 25.0 / MainWindow.timerMax;
+                }
+                else
+                {
+                    RecordIcon.Opacity = (double)(recordAudioIconTimer / MainWindow.timerMax);
+                    if (recordAudioIconTimer >= MainWindow.timerMax)
+                    {
+                        // [WL] Recording stuff goes here, but we are using Wizard of Oz implementation for the sake of time.
+                        /*
+                        MainWindow.sensorAudio.AutomaticGainControlEnabled = false;
+                        var recordingLength = (int)15 * 2 * 16000; // [WL] 15 seconds max per recording.
+                        var buffer = new byte[1024];
+
+                        using (var fileStream = new FileStream("Page" + currentPage + ".wav", FileMode.Create))
+                        {
+                            //WriteWavHeader(fileStream, recordingLength);
+
+                            //Start capturing audio                               
+                            using (var audioStream = MainWindow.sensorAudio.Start())
+                            {
+                                //Simply copy the data from the stream down to the file
+                                int count, totalCount = 0;
+                                while ((count = audioStream.Read(buffer, 0, buffer.Length)) > 0 && totalCount < recordingLength)
+                                {
+                                    fileStream.Write(buffer, 0, count);
+                                    totalCount += count;
+                                }
+                            }
+                        }
+                        */
+                    }
+                }                
             }
             else if (!instructions.Equals(""))
             {
@@ -174,7 +223,11 @@ namespace CS160_FinalProj_Framework
                     else
                     {
                         currentText = 0;
-                        if (currentPage + 1 <= pageMax)
+                        if (currentPage == pageMax)
+                        {
+                            MainWindow.pageFrame.Navigate(new HomePage());
+                        }
+                        else if (currentPage + 1 <= pageMax)
                         {
                             currentPage++;
                             MainWindow.ready = false;
@@ -229,6 +282,44 @@ namespace CS160_FinalProj_Framework
             Audio.Source = new Uri("http://www.wav-sounds.com/movie/harrypotter.wav", UriKind.Absolute);
             Audio.LoadedBehavior = MediaState.Play;
             Audio.UnloadedBehavior = MediaState.Close;
+        }
+
+        // temporary, for testing purposes
+        private void PageFrame_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (currentText < textMax)
+            {
+                currentText++;
+                if (lines[currentText].Contains('*'))
+                {
+                    int pos = lines[currentText].IndexOf('*');
+                    instructions = lines[currentText].Substring(pos);
+                    lines[currentText] = lines[currentText].Replace(instructions, "");
+                    Textblock.Foreground = new SolidColorBrush(Colors.Red);
+                    Textblock.FontWeight = FontWeights.Bold;
+                }
+                else
+                {
+                    instructions = "";
+                    MainWindow.ready = false;
+                }
+                Textblock.Text = lines[currentText];
+            }
+            else
+            {
+                Console.WriteLine("current page = " + currentPage);
+                currentText = 0;
+                if (currentPage == pageMax)
+                {
+                    MainWindow.pageFrame.Navigate(new HomePage());
+                }
+                else if (currentPage + 1 <= pageMax)
+                {
+                    currentPage++;
+                    MainWindow.ready = false;
+                    Book.Source = new Uri(path + "Page" + currentPage + ".xaml", UriKind.RelativeOrAbsolute);
+                }
+            }
         }  
     }
 }

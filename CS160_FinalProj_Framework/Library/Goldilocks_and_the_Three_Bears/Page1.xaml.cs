@@ -16,12 +16,12 @@ namespace CS160_FinalProj_Framework.Library.Goldilocks_and_the_Three_Bears
 {    
     public partial class Page1 : Page
     {
-        private String[] allText = {"There once lived a little girl who was named Goldilocks, because her hair shone like gold.",
-                                    "One day, Goldilocks got lost in the woods and came upon a neat little house.",
+        private String[] allText = {"There once was a little girl named Goldilocks, whose hair shone like gold.",
+                                    "One day, Goldilocks got lost in the woods and found a little house.",
                                     "This house belonged to a family of three bears-- Papa Bear, Mama Bear, and Baby Bear. But Goldilocks did not know that.",
                                     "Goldilocks went up to the door and knocked.",
                                     "Help Goldilocks by knocking three times! *KNOCK*",
-                                    "No one answered the door. And so, because she was very tired and hungry, Goldilocks opened the door."};                
+                                    "No one answered. And so, because she was very tired and hungry, Goldilocks opened the door."};                
 
         public Page1()
         {
