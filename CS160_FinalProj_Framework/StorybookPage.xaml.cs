@@ -148,7 +148,7 @@ namespace CS160_FinalProj_Framework
                 {
                     RecordIcon.Opacity = (double)(recordAudioIconTimer / MainWindow.timerMax);
                     if (recordAudioIconTimer >= MainWindow.timerMax)
-                    {
+                    {                        
                         // [WL] Recording stuff goes here, but we are using Wizard of Oz implementation for the sake of time.
                         /*
                         MainWindow.sensorAudio.AutomaticGainControlEnabled = false;

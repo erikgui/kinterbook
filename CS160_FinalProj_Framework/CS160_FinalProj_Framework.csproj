@@ -232,6 +232,8 @@
     <Resource Include="Library\Goldilocks_and_the_Three_Bears\Page4.jpg" />
     <Resource Include="Library\Goldilocks_and_the_Three_Bears\Page5.jpg" />
     <Resource Include="Library\Goldilocks_and_the_Three_Bears\Page6.jpg" />
+    <Resource Include="Images\cursor.png" />
+    <Resource Include="Images\storybook_stop_button.png" />
     <Content Include="recording.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

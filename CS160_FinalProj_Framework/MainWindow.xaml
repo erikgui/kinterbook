@@ -10,6 +10,10 @@
         <my:KinectSensorChooser Canvas.Left="470" Canvas.Top="475" Name="KinectSensorChooser" Width="600" KinectSensorChanged="KinectSensorChooser_KinectSensorChanged" />
         
         <!-- [WL] Custom Kinect cursor. Starts off-screen by default. NOTE: Need to change Fill to custom cursor image! -->
-        <Ellipse Canvas.Left="-50" Canvas.Top="-50" Height="50" Width="50" Name="KinectCursor" Stroke="{x:Null}" Fill="BlueViolet" />
+        <Ellipse Canvas.Left="-50" Canvas.Top="-50" Height="50" Width="50" Name="KinectCursor" Stroke="{x:Null}">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="/CS160_FinalProj_Framework;component/Images/cursor.png" />
+            </Ellipse.Fill>
+        </Ellipse>
     </Canvas>
 </Window>
